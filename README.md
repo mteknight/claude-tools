@@ -73,9 +73,10 @@ If the `.claude/agents` or `.claude/skills` directories do not exist, create the
 
 ## Sample Output
 
-The example below was produced by `adr-generate` for a common scaling decision: whether to continue with MongoDB or migrate to PostgreSQL as a primary data store.
+The examples below were produced by `adr-generate`: 
 
-[View sample: 0001-use-postgresql-as-primary-data-store.md](./examples/0001-use-postgresql-as-primary-data-store.md)
+- [dotnet-stack-for-greenfield-cloud.md](./examples/dotnet-stack-for-greenfield-cloud.md): Implement .NET stack for greenfield projects
+- [use-postgresql-as-primary-data-store.md](./examples/use-postgresql-as-primary-data-store.md): MongoDB vs PostgreSQL as a primary data store
 
 ---
 
