@@ -4,7 +4,7 @@ A collection of Claude Code agents and skills built for real engineering work.
 
 Each tool is a single file. Drop it into your project and it works. No dependencies, no configuration, no setup overhead.
 
-Built and maintained by [Alexandre Fernandes](https://www.linkedin.com/in/alexandrefernandes-dotnet/), Fractional Solutions Architect at [Lumenworks Digital](https://www.alexandrefernandes.co.uk).
+Built and maintained by [Alexandre Fernandes](https://go.alexandrefernandes.co.uk/linkedin), Fractional Solutions Architect at [Lumenworks Digital](https://www.alexandrefernandes.co.uk).
 
 ---
 
@@ -83,4 +83,4 @@ The example below was produced by `adr-generate` for a common scaling decision: 
 
 This repo grows with each engagement. If you find a tool useful, star the repo to follow updates.
 
-If you work with scaling tech companies and want to talk architecture, [connect on LinkedIn](https://www.linkedin.com/in/alexandrefernandes-dotnet/).
+If you work with scaling tech companies and want to talk architecture, [connect on LinkedIn](https://go.alexandrefernandes.co.uk/linkedin).
