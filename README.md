@@ -53,6 +53,22 @@ No invocation needed. Once installed, it runs automatically when relevant.
 
 ---
 
+#### `create-plan-tdd`
+
+Generates a Technical Design Document (TDD) at `.claude/plans/<name>.md` for implementation work: architecture, phased milestones with verification criteria, risks, testing strategy, and rollout.
+
+Use it once the approach is settled and the question is "how do we build this," not "which approach do we pick" (that's an RFC) or "why did we choose X" (that's an ADR). Each phase ends at a verifiable milestone, not a vague task like "refactor X."
+
+**Invoke with:**
+```
+/create-plan-tdd
+```
+or ask Claude to plan an implementation, write a design doc, or draft a migration plan.
+
+**Produces:** a structured markdown TDD, saved only after you confirm, with an offer to start implementation immediately.
+
+---
+
 ## Installation
 
 Both tools are single files. Copy them into your project's `.claude` directory.
@@ -62,9 +78,11 @@ Both tools are single files. Copy them into your project's `.claude` directory.
 .claude/agents/adr-generate.md
 ```
 
-**Skill:**
+**Skills:**
 ```
 .claude/skills/diagram-generator/SKILL.md
+.claude/skills/create-plan-tdd/SKILL.md
+.claude/skills/create-plan-tdd/tdd-template.md
 ```
 
 If the `.claude/agents` or `.claude/skills` directories do not exist, create them. Claude Code picks them up automatically on the next session.
@@ -81,6 +99,10 @@ The examples below were produced by `adr-generate`:
 The example below was produced by `diagram-generator`:
 
 - [diagrams-sample.md](./examples/diagrams-sample.md): flowchart, pie, and bar diagrams, each as a simple ASCII version and a bigger Mermaid version
+
+The example below was produced by `create-plan-tdd`:
+
+- [add-rate-limiting-to-public-api.md](./examples/add-rate-limiting-to-public-api.md): phased TDD for adding per-API-key rate limiting to a public API gateway
 
 ---
 
