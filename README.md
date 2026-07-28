@@ -64,7 +64,7 @@ Both tools are single files. Copy them into your project's `.claude` directory.
 
 **Skill:**
 ```
-.claude/skills/diagram-generator.md
+.claude/skills/diagram-generator/SKILL.md
 ```
 
 If the `.claude/agents` or `.claude/skills` directories do not exist, create them. Claude Code picks them up automatically on the next session.
@@ -77,6 +77,10 @@ The examples below were produced by `adr-generate`:
 
 - [dotnet-stack-for-greenfield-cloud.md](./examples/dotnet-stack-for-greenfield-cloud.md): Implement .NET stack for greenfield projects
 - [use-postgresql-as-primary-data-store.md](./examples/use-postgresql-as-primary-data-store.md): MongoDB vs PostgreSQL as a primary data store
+
+The example below was produced by `diagram-generator`:
+
+- [diagrams-sample.md](./examples/diagrams-sample.md): flowchart, pie, and bar diagrams, each as a simple ASCII version and a bigger Mermaid version
 
 ---
 
