@@ -67,5 +67,4 @@ The data model has stabilised and the reporting requirements are inherently rela
 
 ## Links
 
-- [Reporting module spec](#)
-- [Auth service PostgreSQL setup](#)
+None.

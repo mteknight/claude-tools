@@ -7,11 +7,11 @@
 - [Decision Drivers](#decision-drivers)
 - [Options Considered](#options-considered)
 - [Decision](#decision)
-- [Scope and Carve-Outs](#scope-and-carve-outs)
-- [Consequences](#consequences)
-  - [Positive](#positive)
-  - [Negative and Risks](#negative-and-risks)
-- [Alternatives Considered](#alternatives-considered)
+  - [Scope and Carve-Outs](#scope-and-carve-outs)
+- [Trade-offs](#trade-offs)
+  - [Upsides](#upsides)
+  - [Downsides and Risks](#downsides-and-risks)
+- [Options Analysis](#options-analysis)
   - [.NET on Azure (Chosen)](#net-on-azure-chosen)
   - [Node.js / TypeScript Backend](#nodejs--typescript-backend)
   - [Python Backend](#python-backend)
@@ -23,11 +23,11 @@
 
 Accepted  
 Date: 2026-05-06  
-Deciders: Fractional Solutions Architect consultant, CTO
+Deciders: CTO, Lead Engineer
 
 ## Context
 
-Lumenworks Digital already uses .NET in existing systems and is committing to Azure as its primary cloud platform.  
+The engineering organisation already uses .NET in existing production systems and is committing to Azure as its primary cloud platform.  
 Greenfield cloud and microservices work has so far lacked a formally documented default stack, leading to ambiguity when new services are scoped.  
 This decision formalises the existing direction and extends it as the standard for all new cloud-native and microservices development, while explicitly carving out scope where other technologies remain appropriate.
 
@@ -48,11 +48,11 @@ This decision formalises the existing direction and extends it as the standard f
 
 ## Decision
 
-Adopt .NET as the default backend stack for all greenfield cloud and microservices work at Lumenworks Digital, deployed primarily to Azure.  
+Adopt .NET as the default backend stack for all greenfield cloud and microservices work, deployed primarily to Azure.  
 This option was chosen because it directly satisfies all three primary decision drivers: it leverages existing team expertise, aligns with the Microsoft and Azure ecosystem strategy, and offers strong performance for cloud-native workloads.  
 It also preserves continuity with the .NET systems already in use, avoiding fragmentation of the engineering platform.
 
-## Scope and Carve-Outs
+### Scope and Carve-Outs
 
 This decision applies to greenfield backend services for cloud and microservices workloads. The following carve-outs apply:
 
@@ -60,9 +60,9 @@ This decision applies to greenfield backend services for cloud and microservices
 - **Python**: Permitted for edge cases and for agentic / AI tooling, where the Python ecosystem has clear advantages.
 - **All other greenfield cloud and microservices backend work**: .NET is the default.
 
-## Consequences
+## Trade-offs
 
-### Positive
+### Upsides
 
 - Consolidates backend work on a single, well-supported platform that the team already knows.
 - Maximises first-party integration with Azure services, including identity, messaging, observability, and managed compute.
@@ -70,7 +70,7 @@ This decision applies to greenfield backend services for cloud and microservices
 - Reduces hiring and onboarding ambiguity by providing a clear default stack.
 - Aligns long-term licensing, tooling, and support relationships with a single vendor ecosystem.
 
-### Negative and Risks
+### Downsides and Risks
 
 - Tighter coupling to the Microsoft and Azure ecosystem increases switching costs if strategy changes later.
 - Engineers whose primary expertise is in other ecosystems (Node.js, Java, Python) may have a steeper ramp-up.
@@ -78,7 +78,7 @@ This decision applies to greenfield backend services for cloud and microservices
 - Potential gaps in the .NET ecosystem for niche AI / ML scenarios, mitigated by the Python carve-out.
 - Reliance on Microsoft's roadmap and pricing for both the runtime and the cloud platform.
 
-## Alternatives Considered
+## Options Analysis
 
 ### .NET on Azure (Chosen)
 
@@ -118,7 +118,7 @@ This decision applies to greenfield backend services for cloud and microservices
   - Mature ecosystem for large-scale microservices.
   - Strong performance and tooling.
 - Cons:
-  - No existing footprint at Lumenworks Digital.
+  - No existing footprint in the current platform.
   - Weaker alignment with the Microsoft / Azure strategic direction.
   - Would introduce a parallel platform to maintain alongside existing .NET.
 - Reason rejected: No strategic or expertise-based justification to introduce a second backend platform.
