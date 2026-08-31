@@ -1,6 +1,6 @@
 ---
 name: diagram-generator
-description: Generates diagrams for non-trivial explanations. Use Mermaid when available, ASCII as fallback. Proactively include in plans, reports, and technical docs.
+description: Generate a diagram to visualize architecture, data flows, multi-step processes, state machines, or data models. Use Mermaid when a renderer is available and ASCII as a fallback. Use when explaining a non-trivial concept in a plan, report, or technical doc where a picture adds more clarity than prose.
 ---
 
 # Diagram Generator
