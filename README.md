@@ -85,6 +85,24 @@ or ask Claude to weigh approaches, compare options, or evaluate tradeoffs before
 
 ---
 
+#### `create-plan-adr`
+
+Generates an Architecture Decision Record at `.claude/plans/adr-NNNN-<title>.md` for a decision that has already been made: status, context, a declarative "We will..." decision, and consequences split into positive, negative, and neutral.
+
+Use it when the question is "why did we choose X," not "which approach do we pick" (that's an RFC) or "how do we build it" (that's a TDD). One decision per record, one page at most. Accepted ADRs are never edited; a new ADR supersedes the old one. Numbering is sequential and picked up from the ADRs already in the folder.
+
+It differs from the `adr-generate` agent in when you reach for it. The agent runs a discovery conversation for a decision you are still working through. The skill records a decision you can already state, often the one an RFC just closed.
+
+**Invoke with:**
+```
+/create-plan-adr
+```
+or ask Claude to record a decision, capture the rationale for a design choice, or write up what was chosen and why.
+
+**Produces:** a one-page markdown ADR in `.claude/plans/`, validated against a checklist (declarative decision, negative consequences present, no implementation phases), saved only after you confirm.
+
+---
+
 ## Installation
 
 Copy the files below into your project's `.claude` directory. The agent and the diagram skill are single files; the plan skills ship a `SKILL.md` plus a template file in the same folder.
@@ -101,6 +119,8 @@ Copy the files below into your project's `.claude` directory. The agent and the 
 .claude/skills/create-plan-tdd/tdd-template.md
 .claude/skills/create-plan-rfc/SKILL.md
 .claude/skills/create-plan-rfc/rfc-template.md
+.claude/skills/create-plan-adr/SKILL.md
+.claude/skills/create-plan-adr/adr-template.md
 ```
 
 If the `.claude/agents` or `.claude/skills` directories do not exist, create them. Claude Code picks them up automatically on the next session.
@@ -125,6 +145,10 @@ The example below was produced by `create-plan-tdd`:
 The example below was produced by `create-plan-rfc`:
 
 - [background-job-processing-approach.md](./examples/background-job-processing-approach.md): RFC weighing three ways to move post-checkout work off the request path, with a tradeoff table and a recommendation
+
+The example below was produced by `create-plan-adr`, recording the decision that closed the RFC above:
+
+- [adr-0001-dedicated-worker-for-post-checkout-jobs.md](./examples/adr-0001-dedicated-worker-for-post-checkout-jobs.md): ADR accepting a dedicated worker on Azure Service Bus, with the dual-write risk carried as a negative consequence
 
 ---
 
